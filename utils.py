@@ -110,15 +110,15 @@ def ddi_newfea_gene(DDI_edge,new_label,event_num,X_vector):
 
 def feature_vector(feature_name, df, args):
     def cosine(matrix):
-        # matrix = np.mat(matrix)
+        # matrix = np.asmatrix(matrix)
         matrix_norm = np.linalg.norm(matrix, axis=1, keepdims=True)+ 1e-10
         matrix_norm = matrix/matrix_norm
-        matrix_norm = np.mat(matrix_norm)
+        matrix_norm = np.asmatrix(matrix_norm)
         cosinesimilar = matrix_norm * matrix_norm.T
         return cosinesimilar
 
     def Jaccard(matrix):
-        matrix = np.mat(matrix)
+        matrix = np.asmatrix(matrix)
 
         numerator = matrix * matrix.T
 
